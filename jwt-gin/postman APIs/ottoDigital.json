@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "0cca425f-a50f-48c9-8636-c01e73563e13",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8797028"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8080/api/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test6\",\n    \"password\": \"test\",\n    \"email\": \"test6@test.com\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "register  new user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test6\",\n    \"password\": \"test1\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"disabled": true
+						}
+					]
+				},
+				"description": "login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4NTE2MjEsInVzZXJfaWQiOjh9.z06pTDxGczmwW15qbOMiz9PDqPFQiFSbJbOpm4LZXkM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"user"
+					]
+				},
+				"description": "get current user's information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/balance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4Mzk3NzksInVzZXJfaWQiOjd9.pjoZd2ZLOkOuojbRB2oCIriL8TiBsWiivic3-2bVPEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"balance"
+					]
+				},
+				"description": "get current user's balance"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/top-up",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4Mzk3NzksInVzZXJfaWQiOjd9.pjoZd2ZLOkOuojbRB2oCIriL8TiBsWiivic3-2bVPEI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"debit\": 2000\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/top-up",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"top-up"
+					]
+				},
+				"description": "top up current user's balance"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4NDg3OTEsInVzZXJfaWQiOjd9.sY1rkwcJqp1MmnskNqkQ5fsxcXyLO1xk09neBCZvzrw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/transactions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"transactions"
+					]
+				},
+				"description": "check all transactions"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/confirm-biller-transaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4NDg3OTEsInVzZXJfaWQiOjd9.sY1rkwcJqp1MmnskNqkQ5fsxcXyLO1xk09neBCZvzrw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/confirm-biller-transaction",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"confirm-biller-transaction"
+					]
+				},
+				"description": "retrieve a single biller transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/biller-transactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4NDg3OTEsInVzZXJfaWQiOjd9.sY1rkwcJqp1MmnskNqkQ5fsxcXyLO1xk09neBCZvzrw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/biller-transactions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"biller-transactions"
+					]
+				},
+				"description": "retrieve all biller transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/delete-user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4NTE2MjEsInVzZXJfaWQiOjh9.z06pTDxGczmwW15qbOMiz9PDqPFQiFSbJbOpm4LZXkM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/delete-user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"delete-user"
+					]
+				},
+				"description": "delete current user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/api/wallet/reset-password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjU4NTI2MDEsInVzZXJfaWQiOjExfQ.GNC4_YdKVjMItx1A3kXvu0cCeEX2wd96GkNlHw_ooSE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"test1\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/wallet/reset-password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"reset-password"
+					]
+				},
+				"description": "reset current user's password"
+			},
+			"response": []
+		}
+	]
+}
