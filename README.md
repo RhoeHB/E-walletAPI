@@ -1,5 +1,7 @@
 E-Wallet Demo API
 </br></br>
+Go Lang</br>
+JWT/Gin</br>
 
 Features:</br>
 -register</br>
